@@ -1,0 +1,7 @@
+------------------------------------------------------------------------
+r69648 | charon | 2008-04-13 19:42:31 -0400 (Sun, 13 Apr 2008) | 1 line
+Changed paths:
+   M /trunk/eePanels/libs
+
+eePanels: fix svn:externals to match what toc expects
+------------------------------------------------------------------------
