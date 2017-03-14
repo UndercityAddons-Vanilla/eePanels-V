@@ -43,7 +43,7 @@ local function rebuildMediaList(type)
 		local mlist = mediaList[type]
 		for k in pairs(mlist) do mlist[k] = nil end
 		for k in pairs(mtable) do
-			rawset(mlist, #mlist + 1, k)
+			rawset(mlist, table.getn(mlist) + 1, k)
 		end
 		table.sort(mlist)
 	else
