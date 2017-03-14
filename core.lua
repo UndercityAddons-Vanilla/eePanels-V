@@ -765,7 +765,7 @@ function eePanels:OnEnable()
 --			"For more info, see this thread:  http://www.wowace.com/forums/index.php?topic=3141.0")
 --		StaticPopup_Show("EEPUPGRADEWARNING")
 --		self.db.profile.warningShown = true
-	end
+--	end
 	
 end
 
