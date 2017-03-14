@@ -759,12 +759,12 @@ function eePanels:OnEnable()
 		end
 	end
 	
-	if not self.db.profile.warningShown then
-		eePanels:Print("A new version is about to come out.  Your saved layout won't be compatible with the new version.  "..
-			"If you don't want to lose your current layout, don't upgrade to any new versions of this mod.  "..
-			"For more info, see this thread:  http://www.wowace.com/forums/index.php?topic=3141.0")
-		StaticPopup_Show("EEPUPGRADEWARNING")
-		self.db.profile.warningShown = true
+--	if not self.db.profile.warningShown then
+--		eePanels:Print("A new version is about to come out.  Your saved layout won't be compatible with the new version.  "..
+--			"If you don't want to lose your current layout, don't upgrade to any new versions of this mod.  "..
+--			"For more info, see this thread:  http://www.wowace.com/forums/index.php?topic=3141.0")
+--		StaticPopup_Show("EEPUPGRADEWARNING")
+--		self.db.profile.warningShown = true
 	end
 	
 end
