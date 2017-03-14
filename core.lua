@@ -501,7 +501,7 @@ eePanels.menu =
 							eePanels:ChangeWidth(eePanels.db.profile.panels[i])
 						end
 					end,
-					validate = function(u) if string.match(u, "%d+%.?%d*%%?") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+%.?%d*%%?") then return true else return false end end,
 					order = 19,
 				},
 			
@@ -520,7 +520,7 @@ eePanels.menu =
 							eePanels:ChangeHeight(eePanels.db.profile.panels[i]) 
 						end
 					end,
-					validate = function(u) if string.match(u, "%d+%.?%d*%%?") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+%.?%d*%%?") then return true else return false end end,
 					order = 20,
 				},
 			
@@ -539,7 +539,7 @@ eePanels.menu =
 							eePanels:ChangePosition(eePanels.db.profile.panels[i]) 
 						end
 					end,
-					validate = function(u) if string.match(u, "%d+") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+") then return true else return false end end,
 					order = 21,
 				},
 			
@@ -558,7 +558,7 @@ eePanels.menu =
 							eePanels:ChangePosition(eePanels.db.profile.panels[i]) 
 						end
 					end,
-					validate = function(u) if string.match(u, "%d+") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+") then return true else return false end end,
 					order = 22,
 				},
 			
@@ -978,7 +978,7 @@ function eePanels:CreateMenus()
 					name = L["PanelWidth"], desc = L["PanelWidthDesc"], type='text', usage=' ',
 					get = function() return panel.width end,
 					set = function(u) panel.width = u eePanels:ChangeWidth(panel) end,
-					validate = function(u) if string.match(u, "%d+%.?%d*%%?") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+%.?%d*%%?") then return true else return false end end,
 					order = 19,
 				},
 
@@ -987,7 +987,7 @@ function eePanels:CreateMenus()
 					name = L["PanelHeight"], desc = L["PanelHeightDesc"], type='text', usage=' ',
 					get = function() return panel.height end,
 					set = function(u) panel.height = u eePanels:ChangeHeight(panel) end,
-					validate = function(u) if string.match(u, "%d+%.?%d*%%?") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+%.?%d*%%?") then return true else return false end end,
 					order = 20,
 				},
 
@@ -996,7 +996,7 @@ function eePanels:CreateMenus()
 					name = L["PanelX"], desc = L["PanelXDesc"], type='text', usage=' ',
 					get = function() return math.round(panel.x) end,
 					set = function(u) panel.x = u eePanels:ChangePosition(panel) end,
-					validate = function(u) if string.match(u, "%d+") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+") then return true else return false end end,
 					order = 21,
 				},
 
@@ -1005,7 +1005,7 @@ function eePanels:CreateMenus()
 					name = L["PanelY"], desc = L["PanelYDesc"], type='text', usage=' ',
 					get = function() return math.round(panel.y) end,
 					set = function(u) panel.y = u eePanels:ChangePosition(panel) end,
-					validate = function(u) if string.match(u, "%d+") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+") then return true else return false end end,
 					order = 22,
 				},
 				
@@ -1170,7 +1170,7 @@ function eePanels:CreateMenus()
 					name = L["BGTileSize"], desc = L["BGTileSizeDessc"], type='text', usage = '',
 					get = function() return panel.background.tileSize end,
 					set = function(u) panel.background.tileSize = u eePanels:ChangeBackdrop(panel) eePanels:ChangeBorderColor(panel) end,
-					validate = function(u) if string.match(u, "%d+") then return true else return false end end,
+					validate = function(u) if string.find(u, "%d+") then return true else return false end end,
 					order = 44,
 					disabled = not eePanels.db.profile.isAdvanced,
 					hidden = not eePanels.db.profile.isAdvanced,
@@ -1339,12 +1339,12 @@ end
 --]]
 function eePanels:ChangeWidth(panel)
 	-- Percent size
-	if string.match(panel.width, "%d+%.?%d*%%") then
+	if string.find(panel.width, "%d+%.?%d*%%") then
 		local uiWidth = panel.frame:GetParent():GetWidth()
-		fWidth = string.match(panel.width, "%d+%.?%d*")
+		fWidth = string.sub(panel.width,string.find(panel.width, "%d+%.?%d*"))
 		panel.frame:SetWidth(uiWidth * (fWidth / (100.0)))
 	-- Pixel size
-	elseif string.match(panel.width, "%d+") then
+	elseif string.find(panel.width, "%d+") then
 		panel.frame:SetWidth(tonumber(panel.width))
 	end
 
@@ -1358,12 +1358,12 @@ end
 --]]
 function eePanels:ChangeHeight(panel)
 	-- Percent size
-	if string.match(panel.height, "%d+%.?%d*%%") then
+	if string.find(panel.height, "%d+%.?%d*%%") then
 		local uiHeight = panel.frame:GetParent():GetHeight()
-		fHeight = string.match(panel.height, "%d+%.?%d*")
+		fHeight = string.sub(panel.height,string.find(panel.height, "%d+%.?%d*"))
 		panel.frame:SetHeight(uiHeight * (fHeight / (100.0)))
 	-- Pixel size
-	elseif string.match(panel.width, "%d+") then
+	elseif string.find(panel.width, "%d+") then
 		panel.frame:SetHeight(tonumber(panel.height))
 	end
 
