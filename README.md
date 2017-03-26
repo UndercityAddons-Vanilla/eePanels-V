@@ -23,7 +23,9 @@ eePanels is configured using the console, a built in FuBar2 menu, or using Niaga
   <dt> /eePanels about</dt>
   <dd>Displays information about the addon.</dd>
 </dl>
-### Minimap and FuBar menu panel options:
+
+#### Minimap and FuBar menu panel options:
+
 <dl>
   <dt> /eePanels icon</dt>
   <dd>Toggles the display or hiding of the icon on the FuBar2 panel.</dd>
