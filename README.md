@@ -5,7 +5,7 @@ Create and place panels on your Vanilla World of Warcraft UI. Panels options are
 eePanels is is not skinner, and cannot be used to modify your existing frames.
 
 ## Usage
-eePanels is configured using the console, a built in FuBar2 menu, or using [Niagara's Ace-Console UI](https://github.com/laytya/Niagara).
+eePanels is configured using the console, a built in FuBar2 menu, or using LaYt's [Niagara Ace-Console UI](https://github.com/laytya/Niagara).
 
 ### Commands
 
