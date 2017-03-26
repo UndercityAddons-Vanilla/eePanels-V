@@ -19,12 +19,12 @@ libs\FuBarPlugin-2.0\FuBarPlugin-2.0.lua
 libs\SharedMedia-1.0\SharedMedia-1.0.lua
 libs\Tablet-2.0\Tablet-2.0.lua
 
-localization.enUS.lua
-localization.deDE.lua
-localization.esES.lua
-localization.koKR.lua
-localization.zhCN.lua
-localization.zhTW.lua
+locale\localization.enUS.lua
+locale\localization.deDE.lua
+locale\localization.esES.lua
+locale\localization.koKR.lua
+locale\localization.zhCN.lua
+locale\localization.zhTW.lua
 
-core.lua
+main.lua
 guidePanel.lua

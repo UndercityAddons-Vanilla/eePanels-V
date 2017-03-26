@@ -38,15 +38,6 @@ StaticPopupDialogs["EEPANELSRESET"] =
 	hideOnEscape = 1
 }
 
-StaticPopupDialogs["EEPUPGRADEWARNING"] =
-{
-	text = "eePanels: a new version of this addon is about to come out, but your current layout won't be compatible.  Don't upgrade if you don't want to lose your settings",
-	button1 = "OK",
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = 1,
-}
-
 
 --[[
 -- Round a number to the nearest integer
@@ -673,7 +664,7 @@ function eePanels:ScheduleParentCheck(addonName)
 	-- We want to minimize the number of UpdateBadParents() calls we make (hopefully only after the last addon is loaded), so
 	-- cancel any previously scheduled event, and re-schedule a new one in its palce
 	self:CancelScheduledEvent("eeParentCheck")
-	-- An addon might take a few seconds to build it's frames, so we'll wait until it's finishedS
+	-- An addon might take a few seconds to build it's frames, so we'll wait until it's finished
 	self:ScheduleEvent("eeParentCheck", eePanels.UpdateBadParents, eePanels.recheckTime)
 end
 
@@ -758,15 +749,6 @@ function eePanels:OnEnable()
 			eePanels:CreateGuideFrame(panel,i) 
 		end
 	end
-	
---	if not self.db.profile.warningShown then
---		eePanels:Print("A new version is about to come out.  Your saved layout won't be compatible with the new version.  "..
---			"If you don't want to lose your current layout, don't upgrade to any new versions of this mod.  "..
---			"For more info, see this thread:  http://www.wowace.com/forums/index.php?topic=3141.0")
---		StaticPopup_Show("EEPUPGRADEWARNING")
---		self.db.profile.warningShown = true
---	end
-	
 end
 
 
